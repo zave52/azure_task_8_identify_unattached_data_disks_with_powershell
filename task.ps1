@@ -7,4 +7,4 @@ $Disks = Get-AzDisk -ResourceGroupName "mate-azure-task-5" | Where-Object {$_.Di
 
 Write-Host ("Finded {0} disks" -f $Disks.Count)
 Write-Host "Write result disks to 'result.json'..."
-@($Disks) | ConvertTo-Json | Out-File -Path "result.json"
+$Disks | ConvertTo-Json -AsArray | Out-File -Path "result.json"
